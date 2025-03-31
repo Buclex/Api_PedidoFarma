@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <!-- custom css -->
+    <style>
+        /* alert */
+        /* Estilos para las alertas */
+        .alert {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            position: relative;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        /* Alerta de éxito (verde) */
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Alerta de error (roja) */
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Botón para cerrar la alerta */
+        .alert .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        /* Efecto de desaparición de la alerta */
+        .fade {
+            animation: fadeOut 5s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                height: 0;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+    </style>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <!-- Sección 2: Menú de navegación (puedes añadir más enlaces aquí) -->
+    <header class="flex justify-between items-center p-4 bg-gray-800 text-white">
+        <h1 class="text-3xl font-bold">
+            PedidoFarma
+        </h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="hover:text-gray-400">Productos</a></li>
+                <li><a href="exel.html" class="hover:text-gray-400">Añadir productos</a></li>
+                <li><a href="index.html" class="hover:text-gray-400">Cerrar sesion</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div id="alert-container" class="alert-container"></div>
+
+    
+    <!-- productos -->
+        <div class="max-w-6xl mx-auto p-1">
+        <!-- filtro de producto -->
+            <div class="relative">
+                <button class="bg-sky-400 text-white px-6 py-2 rounded-lg hover:bg-blue-600" onclick="toggleMenu()">Filtrar</button>
+
+                <div id="submenu" class="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg hidden">
+                    <div class="p-4">
+                        <label for="categoria" class="block text-sm">Categoría:</label>
+                        <select id="categoria" name="categoria" class="mt-2 p-2 w-full border rounded-md">
+                            <option value="provedor">provedor</option>
+                            <option value="nombre">nombre</option>
+                            <option value="precio">precio</option>
+                        </select>
+                    </div>
+
+                    <div class="p-4">
+                        <label for="precio" class="block text-sm">Precio máximo:</label>
+                        <input type="number" id="precio" name="precio" placeholder="1000" class="mt-2 p-2 w-full border rounded-md">
+                    </div>
+                </div>
+            </div>
+        <!-- end filtro de producto -->
+
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Lista de Productos</h1>
+        
+        <!-- Tabla -->
+        <table id="productos" class="min-w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+            <!-- Encabezado de la tabla -->
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="px-6 py-4 text-left text-gray-600">Producto</th>
+                    <th class="px-6 py-4 text-left text-gray-600">Descripción</th>
+                    <th class="px-6 py-4 text-left text-gray-600">Precio</th>
+                    <th class="px-6 py-6 text-left text-gray-600">Acciones</th>
+                </tr>
+            </thead>
+    <!-- end productos -->
+
+    <!-- cdn axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/productos.js"></script>
+    <!-- js filtro de productos -->
+     <script src="js/helpers/filtrar.js"></script>
+</body>
+
+</html>

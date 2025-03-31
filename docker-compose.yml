@@ -1,0 +1,18 @@
+services:
+  mysqldb:
+    image: mysql
+    container_name: 'pruebaDB'
+    environment:
+      MYSQL_ROOT_PASSWORD: 7801424
+      MYSQL_DATABASE: pedidoFarmadb 
+      MYSQL_USER: buclex
+      MYSQL_PASSWORD: 7801424
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+    driver: 'local'
+

@@ -1,0 +1,19 @@
+CREATE DATABASE pedidoFarmadb;
+
+use pedidoFarmadb;
+
+CREATE TABLE Productos (
+    ID_producto INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_de_Barras VARCHAR(255) UNIQUE,
+    Nombre VARCHAR(255) NOT NULL,
+    Descripción TEXT,
+    Categoria VARCHAR(100),
+    Precio DECIMAL(10, 2)
+);
+
+CREATE TABLE users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);

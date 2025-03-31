@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+     <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans flex justify-center items-center h-screen">
+
+    <!-- contenedor del formulario -->
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+        <div id="alert-container" class="alert-container"></div>
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Iniciar Sesión</h2>
+
+        <form id="login-form" action="#" method="POST" class="space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700">Correo Electrónico</label>
+                <input id="email" type="email" id="email" name="email" required class="mt-2 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="correo@ejemplo.com">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-semibold text-gray-700">Contraseña</label>
+                <input id="password" type="password" id="password" name="password" required class="mt-2 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="********">
+            </div>
+
+            <div>
+                <button type="submit" class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Iniciar Sesión</button>
+            </div>
+        </form>
+
+        <!-- <div class="mt-4 text-center">
+            <a href="#" class="text-sm text-blue-500 hover:text-blue-700">¿Olvidaste tu contraseña?</a>
+        </div> -->
+        <div class="text-center mt-2">
+            <p class="text-sm">¿No tienes una cuenta? <a href="register.html" class="text-blue-500 hover:text-blue-700">Regístrate aquí</a></p>
+        </div>
+    </div>
+    <!-- end contenedor del formulario -->
+
+    
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+</html>
